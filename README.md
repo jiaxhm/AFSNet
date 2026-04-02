@@ -15,5 +15,4 @@ Index Terms—Sensor applications, convolutional neural network (CNN), Transform
 <img width="2358" height="1445" alt="Fig1" src="https://github.com/user-attachments/assets/eebce3c3-5707-4fed-9692-abe4823cf2e9" />
 The conceptual illustration of AFSNet. The AFSNet mainly consists of three modules: (1)Low-level encoder for preserving basic information. (2)High-level encoder for extracting abstract cues. (3)Aggregation decoder for refining multi-scale content.
 
-
 Our paper “Adaptive Fusion of CNN-Transformer for Superpixel Segmentation” has been submitted to the IEEE Sensors Letters.
