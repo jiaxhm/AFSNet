@@ -255,6 +255,17 @@ def main():
         best_EPE = min(avg_sem, best_EPE)
         save_checkpoint(rec_dict, is_best)
 
+def kl_torch(p, q, mask):
+    eps = 1e-8
+
+    p = torch.clamp(p, eps, 1.0 - eps)
+    q = torch.clamp(q, eps, 1.0 - eps)
+
+    kl = F.kl_div(torch.log(p), q, reduction='none')
+
+    kl_mean = (kl*mask).mean()
+
+    return kl_mean
 
 def train(train_loader, model, optimizer, epoch, train_writer, init_spixl_map_idx, xy_feat):
     global n_iter, args, intrinsic
@@ -294,12 +305,16 @@ def train(train_loader, model, optimizer, epoch, train_writer, init_spixl_map_id
 
 
         # ========== predict association map ============
-        output, output2 = model(input_gpu)
+        output, output2, edge_super = model(input_gpu)
         slic_loss, loss_sem, loss_pos = compute_semantic_pos_loss( output, LABXY_feat_tensor,
                                                                 pos_weight= args.pos_weight, kernel_size=args.downsize)
-        edge_loss = cross_entropy_loss_edge(output2, edge.to(device))
+        edge_loss, mask = cross_entropy_loss_edge(output2, edge.to(device))
+        # mse_loss = torch.mean((edge_super - edge.to(device)) ** 2 * mask)
+        # edge_loss2 = cross_entropy_loss_edge(edge_super, edge.to(device))
+        # kl_loss = kl_torch(output2, edge_super)
+        kl_loss = kl_torch(edge_super, edge.to(device), mask)
 
-        loss = slic_loss + edge_loss
+        loss = slic_loss + edge_loss + kl_loss * 10
 
         # ========= back propagate ==============
         optimizer.zero_grad()
