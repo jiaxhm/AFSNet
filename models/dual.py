@@ -1846,8 +1846,9 @@ class DUAL(nn.Module):
 
         features = self.decoder(features)
         edge = self.head(features)
+        edge_super, _ = torch.min(1 - edge, dim=1, keepdim=True)
         edge2 = self.head2(features)
-        return edge, edge2
+        return edge, edge2, edge_super
 
     def weight_parameters(self):
         return [param for name, param in self.named_parameters() if 'weight' in name]
