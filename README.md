@@ -14,7 +14,7 @@ Index Terms—Sensor applications, convolutional neural network (CNN), Transform
 
 <img width="2358" height="1445" alt="Fig1" src="https://github.com/user-attachments/assets/baf7d61a-4959-4b05-bb35-2c4a1bd17722" />
 
-The conceptual illustration of AFSNet. The AFSNet mainly consists of three modules: (1)Low-level encoder for preserving basic information. (2)High-level encoder for extracting abstract cues. (3)Aggregation decoder for refining multi-scale content.
+To capitalize on the strengths of CNN in capturing local features and Transformer in handling long-range dependencies, we propose AFSNet, as illustrated in Fig. 1. The AFSNet mainly consists of four strategies: (1) Low-level encoder for preserving basic information. (2) High-level encoder for extracting abstract cues. (3) Aggregation decoder for refining multi-scale content. (4) Boundary guided loss for enhancing superpixel regularity.
 
 ✅ We have submitted the paper to the IEEE Sensors Letters
 
