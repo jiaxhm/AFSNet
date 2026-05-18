@@ -734,14 +734,6 @@ class MetaFormer(nn.Module):
             x = self.downsample_layers[i](x)
             x = self.stages[i](x)
             feature = self.sgcsas[i](x.permute(0, 3, 1, 2), cnn_encoder_out[i])
-            # feature = self.trans_rates[i] * x.permute(0, 3, 1, 2) + self.cnn_rates[i] * cnn_encoder_out[i]
-            # softmax_att = self.fusion_atts[i](feature)
-            # feature =torch.cat([x.permute(0, 3, 1, 2).unsqueeze(1), cnn_encoder_out[i].unsqueeze(1)], dim=1)
-            # feature = (feature * softmax_att).sum(dim=1)
-
-            # feature = torch.cat((x.permute(0, 3, 1, 2), cnn_encoder_out[i]), dim=1)
-            # feature = self.fusion_convs[i](feature)
-            # x = feature.permute(0, 2, 3, 1)
             features.append(feature)
 
         return features
