@@ -19,3 +19,6 @@ To capitalize on the strengths of CNN in capturing local features and Transforme
 ✅ We have submitted the paper to the IEEE Sensors Letters
 
 ✅ We have updated the code
+
+# Weights
+We have placed the pretrained weight in the https://pan.baidu.com/s/19gCcLKVZftkWPwaAm8i1PA password: z4qx
