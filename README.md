@@ -24,7 +24,7 @@ To capitalize on the strengths of CNN in capturing local features and Transforme
 
 # Environment Installation
 
-Reference to SCN (https://github.com/fuy34/superpixel_fcn)and MetaFormer(https://github.com/sail-sg/metaformer).
+Reference to SCN (https://github.com/fuy34/superpixel_fcn) and MetaFormer(https://github.com/sail-sg/metaformer).
 
 # Preparing Dataset
 1. BSDS500: Following this link: https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html
