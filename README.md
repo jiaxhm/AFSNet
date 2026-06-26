@@ -37,9 +37,9 @@ Furthermore, preprocessing of BSDS500 training data follows SCN (https://github.
 1. The proposed AFSNet is trained on the BSDS500 training set.
 2. During training, RGB images and gradient images are used as inputs, and the superpixel loss and edge constraint are jointly optimized.
 
-  Run 'python main.py' to start the program.
+   Run 'python main.py' to start the program.
 
-  ✨ It is worth mentioning that AFSNet is trained exclusively on the BSDS500 training set and directly generates superpixels for NYUv2 and KITTI without requiring fine-tuning.
+   ✨ It is worth mentioning that AFSNet is trained exclusively on the BSDS500 training set and directly generates superpixels for NYUv2 and KITTI without requiring fine-tuning.
 
 # Testing
 1. Test BSDS500: Please run `test_bsds.py`.
