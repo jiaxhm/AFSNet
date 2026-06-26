@@ -16,9 +16,9 @@ Index Terms—Sensor applications, convolutional neural network (CNN), Transform
 
 To capitalize on the strengths of CNN in capturing local features and Transformer in handling long-range dependencies, we propose AFSNet, as illustrated in Fig. 1. The AFSNet mainly consists of four strategies: (1) Low-level encoder for preserving basic information. (2) High-level encoder for extracting abstract cues. (3) Aggregation decoder for refining multi-scale content. (4) Boundary guided loss for enhancing superpixel regularity.
 
-✅ We have submitted the paper to the IEEE Sensors Letters
+✅ We have submitted the paper to the IEEE Sensors Letters (2026/6/26)
 
-✅ We have updated the code
+✅ We have updated the code (2026/6/26)
 
 # ✨ Getting Start
 
